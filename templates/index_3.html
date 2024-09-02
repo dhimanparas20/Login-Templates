@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Login Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: #000;
+            overflow: hidden;
+        }
+
+        .smoke {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://www.transparenttextures.com/patterns/foggy-birds.png');
+            animation: smoke 20s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes smoke {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-50px);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .glassmorph {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            z-index: 10;
+        }
+
+        .smoke::after {
+            content: '';
+            position: absolute;
+            top: -200%;
+            left: -50%;
+            width: 200%;
+            height: 400%;
+            background: radial-gradient(white 10%, transparent 60%);
+            animation: smoke-move 30s linear infinite;
+            opacity: 0.1;
+        }
+
+        @keyframes smoke-move {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100%, 100%);
+            }
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="smoke"></div>
+    <div class="glassmorph p-8 rounded-lg max-w-sm w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <h2 class="text-3xl font-semibold text-center text-white mb-8">Login</h2>
+        <form>
+            <div class="relative mb-6">
+                <input type="text" class="w-full p-3 text-lg bg-transparent border-b-2 border-white focus:outline-none text-white" required>
+                <label class="absolute top-3 left-3 text-white transition duration-300 transform scale-75 origin-left -translate-y-6">Username</label>
+            </div>
+            <div class="relative mb-6">
+                <input type="password" class="w-full p-3 text-lg bg-transparent border-b-2 border-white focus:outline-none text-white" required>
+                <label class="absolute top-3 left-3 text-white transition duration-300 transform scale-75 origin-left -translate-y-6">Password</label>
+            </div>
+            <button type="submit" class="w-full py-3 mt-4 text-lg text-white bg-opacity-30 bg-white rounded-lg hover:bg-opacity-50 transition duration-300">Login</button>
+        </form>
+    </div>
+</body>
+</html>

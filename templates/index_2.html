@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cool Login Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @keyframes gradientBG {
+            0%, 100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        body {
+            background: linear-gradient(270deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+            background-size: 600% 600%;
+            animation: gradientBG 20s ease infinite;
+        }
+
+        .glassmorph {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="flex items-center justify-center min-h-screen">
+    <div class="glassmorph p-8 rounded-lg max-w-sm w-full transform transition duration-300 hover:scale-105 hover:shadow-2xl">
+        <h2 class="text-3xl font-semibold text-center text-white mb-8">Login</h2>
+        <form>
+            <div class="relative mb-6">
+                <input type="text" class="w-full p-3 text-lg bg-transparent border-b-2 border-white focus:outline-none text-white" required>
+                <label class="absolute top-3 left-3 text-white transition duration-300 transform scale-75 origin-left -translate-y-6">Username</label>
+            </div>
+            <div class="relative mb-6">
+                <input type="password" class="w-full p-3 text-lg bg-transparent border-b-2 border-white focus:outline-none text-white" required>
+                <label class="absolute top-3 left-3 text-white transition duration-300 transform scale-75 origin-left -translate-y-6">Password</label>
+            </div>
+            <button type="submit" class="w-full py-3 mt-4 text-lg text-white bg-opacity-30 bg-white rounded-lg hover:bg-opacity-50 transition duration-300">Login</button>
+        </form>
+    </div>
+</body>
+</html>
